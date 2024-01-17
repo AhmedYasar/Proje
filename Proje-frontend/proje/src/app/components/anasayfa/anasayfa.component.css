@@ -1,0 +1,32 @@
+
+.footer-links a {
+    display: inline-block;
+    margin-right: 20px; /* Boşluk miktarını artırabilirsiniz */
+    text-decoration: none;
+    color: #333; /* Normal link rengi, ihtiyaca göre değiştirilebilir */
+}
+
+.footer-links a:hover {
+    color: #555; /* Üzerine gelindiğinde link rengi, ihtiyaca göre değiştirilebilir */
+}
+
+.footer-links a:active {
+    color: #777; /* Tıklanan link rengi, ihtiyaca göre değiştirilebilir */
+}
+
+.footer-links a:visited {
+    color: #333; /* Ziyaret edilmiş link rengi, ihtiyaca göre değiştirilebilir */
+}
+
+
+
+
+
+
+.card:hover .btn-primary {
+    background-color: white; /* Buton arkaplan rengi beyaz */
+    color: blue !important; /* Buton yazı rengi mavi ve !important kullanılarak önceliği arttırılıyor */
+    border: 1px solid blue; /* Buton sınırları mavi */
+  }
+  
+  

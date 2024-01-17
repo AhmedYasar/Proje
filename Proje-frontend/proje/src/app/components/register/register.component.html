@@ -1,0 +1,37 @@
+<body class="d-flex align-items-center py-4"  [attr.data-bs-theme]="darkMode">>
+    <main class="form-signin w-100 m-auto">
+      <form [formGroup]="registerForm">
+  
+        <h1 class="h3 mb-3 fw-normal">Giriş yap</h1>
+  
+        <div class="form-floating mb-3">
+            <input type="text" formControlName="ad" class="form-control"
+              id="input" placeholder="Ad">
+            <label for="floatingPassword">Ad</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" formControlName="soyad" class="form-control"
+              id="input" placeholder="Soyad">
+            <label for="floatingPassword">Soyad</label>
+          </div>
+  
+
+        <div class="form-floating mb-3">
+          <input type="email" formControlName="email" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <label for="floatingInput">E-posta</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" formControlName="sifre" class="form-control"
+            id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Parola</label>
+        </div>
+      
+        <button class="btn btn-primary w-100 py-2" type="submit" (click)="register()">Kayıt ol</button>
+      </form>
+      <button class="btn btn-secondary w-100 py-2 mt-2" (click)="toggleDarkMode()">
+        {{ darkMode ==="dark"? 'Light Mode' : 'Dark Mode' }}
+      </button>
+      <p class="mt-5 mb-3 text-body-secondary">&copy; 2023-2024</p>
+    </main>
+  </body>

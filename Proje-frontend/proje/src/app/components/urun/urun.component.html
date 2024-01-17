@@ -1,0 +1,46 @@
+<div class="container"> 
+  <app-navi></app-navi>
+  <div class="row">
+    <div class="col-md-3">
+      <app-kategori></app-kategori>
+    </div>
+    <div class="col-md-9">
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  
+  <div class="mb-3">
+    <label for="filterText" class="form-label">Ürün ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz.">
+  </div>
+  
+  <div *ngIf="filterText.length>2 && filterText[0]!=' '" class="alert alert-primary">
+    {{filterText}} aradınız.
+  </div>
+
+  <table *ngIf="dataLoaded==true" class="table">
+    <thead>
+      <tr>
+        <th>Ürün adı</th>
+        <th>Ürün tanımı</th>
+        <th>Fiyat</th>
+        <th>Stok</th>
+        <th>Resim</th>
+        <th></th>
+        <th></th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let urun of urunler | filterPipe:filterText">
+        <td>{{ urun.urunAdi|lowercase}}</td>
+        <td class="text-truncate" style="max-width: 200px; max-height: 50px;">{{ urun.urunTanimi }}</td>
+        <td>{{ urun.urunFiyati |currency:'TRY':'symbol':'1.2-2'}}</td>
+        <td *ngIf="urun.urunStok>0" >{{ urun.urunStok }}</td>
+        <td><img class="your-image-class" src="{{ urun.urunResimURL }}" ></td>
+        <td><button routerLink="/urunler/urun/{{urun.urunId}}"type="button" class="btn btn-info">Detaylar</button></td>
+        <td><button (click)="addToCart(urun)" type="button" class="btn btn-success">Sepete Ekle</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

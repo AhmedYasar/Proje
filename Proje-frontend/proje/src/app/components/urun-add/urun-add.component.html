@@ -1,0 +1,68 @@
+<app-navi></app-navi>
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Ürün ekle</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="urunAddForm">
+                    <div class="mb-3">
+                        <label for="urunAdi">Ürün adı</label>
+                        <div class="form-group">
+                            <input type="text" id="urunAdi" formControlName="urunAdi" class="form-control"
+                                placeholder="Ürün adı">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="urunTanimi">Ürün tanımı</label>
+                        <div class="form-group">
+                            <input type="text" id="urunTanimi" formControlName="urunTanimi" class="form-control"
+                                placeholder="Ürün tanımı">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="urunFiyati">Ürün fiyatı</label>
+                        <div class="form-group">
+                            <input type="number" id="urunFiyat" formControlName="urunFiyati" class="form-control"
+                                placeholder="Ürün fiyatı">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="urunStok">Ürün stoğu</label>
+                        <div class="form-group">
+                            <input type="number" id="Adet" formControlName="urunStok" class="form-control"
+                                placeholder="Stok adeti">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="urunResimURL">Ürün resim URL'si</label>
+                        <div class="form-group">
+                            <input type="text" id="urunResimURL" formControlName="urunResimURL" class="form-control"
+                                placeholder="Fiyatı">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="kategoriId">Ürün kategorisi</label>
+                        <div class="form-group">
+                            <input type="number" id="kategoriId" formControlName="kategoriId" class="form-control"
+                                placeholder="Kategori">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ureticiId">Ürün üreticisi</label>
+                        <div class="form-group">
+                            <input type="number" id="ureticiId" formControlName="ureticiId" class="form-control"
+                                placeholder="Üretici ismi">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                    <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

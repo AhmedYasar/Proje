@@ -1,0 +1,45 @@
+body {
+  height: 100%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+  margin: auto; /* Merkezlemek için ekledik */
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"],
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-radius: 0; /* Kenar yarıçapını sıfırla */
+}
+
+.form-check.text-start {
+  text-align: left; /* Checkbox'ı sola hizala */
+}
+
+@media (min-width: 768px) {
+  .form-signin {
+    max-width: 600px; /* Geniş ekranda daha fazla genişlik */
+  }
+}
+
+
+.dark-mode {
+  background-color: #333; /* Dark mode için arka plan rengi */
+  color: #fff; /* Dark mode için metin rengi */
+}
+
+.dark-mode .form-signin {
+  border: 1px solid #555; /* Dark mode için form kenar rengi */
+}
+
+.dark-mode .btn-secondary {
+  background-color: #555; /* Dark mode için ikinci butonun arka plan rengi */
+  color: #fff; /* Dark mode için ikinci butonun metin rengi */
+}
+

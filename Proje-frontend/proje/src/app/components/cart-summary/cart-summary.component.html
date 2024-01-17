@@ -1,0 +1,11 @@
+<li *ngIf="sepetler && sepetler.length>0" class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Sepetiniz
+    </a>
+    <ul class="dropdown-menu">
+      <li *ngFor="let sepet of sepetler;let i = index"><a class="dropdown-item"><span class="badge text-bg-secondary">{{sepet.adet}}</span> <span *ngIf="urunler && urunler.length > 0">{{urunler[i]?.urunAdi}}</span> 
+      <span class="badge text-bg-secondary"(click)="removeFromCart(sepet,urunler[i])" >Sil</span> </a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" routerLink="/sepet" >Sepete git</a></li>
+    </ul>
+</li>

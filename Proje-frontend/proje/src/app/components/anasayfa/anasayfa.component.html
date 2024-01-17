@@ -1,0 +1,54 @@
+<body>
+  <main>
+    <app-navi></app-navi>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Proje Eczanesi</h1>
+          <p class="lead text-body-secondary">Hayatınızı Kolaylaştırmak Adına Buradayız! En İyi İlaçları, En Uygun Fiyatlarla Size Sunuyoruz. Sağlık ve İyilik Yolculuğunuzda Yanınızdayız, Eczaneniz Bir Tık Uzağınızda!</p>
+          <p>
+            <a routerLink="/urunler" class="btn btn-primary my-2 btn-lg">Hemen başla</a>
+            
+
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    
+        <div class="col" *ngFor="let urun of rastgeleUrunler">
+          <div class="card h-100">
+            <img [src]="urun.urunResimURL" class="card-img-top img-fluid" alt="{{urun.urunAdi}}">
+            <div class="card-body">
+              <h5 class="card-title">{{urun.urunAdi}}</h5>
+              <p class="card-text text-truncate">{{urun.urunTanimi}}</p>
+              
+            </div>
+            <div class="card-footer d-flex justify-content-start">
+              <a  routerLink="/urunler/urun/{{urun.urunId}}"class="btn btn-primary">Detaylar</a>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+    
+    
+    
+  </main>
+</body>
+          <footer class="text-body-secondary py-5 footer-links">
+            <div class="container">
+              <p class="float-end mb-1">
+              </p>
+              <div class="link-container">
+                <a href="#">Hakkımızda</a>
+                <a href="#">İletişim</a>
+                <a href="#">Sıkça Sorulan Sorular</a>
+            </div>
+            
+            </div>
+          </footer>

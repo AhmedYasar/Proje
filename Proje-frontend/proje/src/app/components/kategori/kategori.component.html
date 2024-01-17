@@ -1,0 +1,12 @@
+<ul class="list-group">
+  <li routerLink="/urunler"
+  (click)="clearCurrentKategori()"
+  [class]="getAllKategoriClass()"
+  >Tüm Ürünler</li>
+    <li (click)="setCurrentKategori(kategori)" 
+    routerLink="/urunler/kategori/{{kategori.kategoriId}}"
+    *ngFor="let kategori of kategoriler"
+    [class]="getCurrentKategoriClass(kategori)">{{kategori.kategoriAdi}}</li>
+  </ul>
+
+ <h5 *ngIf="currentKategori"> {{currentKategori.kategoriAdi}} Seçtiniz </h5> 

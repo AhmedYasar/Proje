@@ -1,0 +1,41 @@
+<!-- sepet.component.html -->
+<app-navi></app-navi>
+<div class="container mt-5">
+  <h2 class="mb-4">Sepet</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          
+          <th scope="col">Ürün Adı</th>
+          <th scope="col">Fiyat</th>
+          <th scope="col">Miktar</th>
+          <th scope="col">Toplam</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of urunler; let i = index">
+          
+          <td>{{ item.urunAdi }}</td>
+          <td>{{ item.urunFiyati| currency:'TRY':'symbol':'1.2-2' }}</td>
+          <td>
+            <input type="number" class="form-control" [(ngModel)]="sepetler[i].adet" (ngModelChange)="updateSepet(sepetler[i],item)" min="1" />
+         
+             </td>
+          <td>{{ item.urunFiyati * sepetler[i].adet | currency:'TRY':'symbol':'1.2-2'  }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm"  (click)="removeSepet(sepetler[i])">
+              <i class="bi bi-trash" ></i> Sil
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="total mt-4" *ngIf="sepetler.length > 0">
+    <h4>Toplam Tutar: <span class="text-success">{{ getTotal() | currency:'TRY':'symbol':'1.2-2'  }}</span></h4>
+    <button class="btn btn-primary mt-3" (click)="odemeYap()" >Ödeme Yap</button>
+  </div>
+</div>
